@@ -1,6 +1,10 @@
 # WEBAPPLICATION PERFORMENCE TESTING PROJECT
 
-## Purpouse
+Object of testing is e-commerce WebApp - **https://Skalnik.pl**
+It is a mountain store specialing in hiking and climbing equipment.
+The selected type of web application has a wide range of functions to test - from searching items, selecting categories, checking item details, adding to cart, updating cart and much more.
+
+## Testing Objectives
 
 ## Main Idea
 
