@@ -5,7 +5,7 @@ Jest to sklep górski specjalizujący się w ekwipunku turystycznym i wspinaczko
 Wybrany typ aplikacji webowej posiada szeroka game funkcji do testowania - zaczynając od wyszukiwania przedmiotów, wyboru kategorii, sprawdzania stron przedmiotów, dodawanie przedmiotów do koszyka, aktualizacja koszyka i wiele innych.
 
 ## I. Cele testowania
-Celem przeporwadzzenia testów jest sprawdzenie astępujących obszarów wydajności testowanej aplikacji webowej:
+Celem przeporwadzzenia testów jest sprawdzenie następujących obszarów wydajności testowanej aplikacji webowej:
 1. Wskazanie wąskich gardeł wydajności tj. funkcjonalności, które wpływają na znaczne wydłużenie czasu odpowiedzi aplikacji.
 2. Szybkość odpowiedzi aplikacji przy rożnych obciążeniach w zakresie od 10 do 500 użytkowników. Zakładając, ze dopuszczalny czas odpowiedzi przy obciążeniu do 100 użytkowników nie powinien przekraczać - 3s, a powyżej 100 użytkowników -  8s.
 3. Stabilność aplikacji w sytuacji występowania dużych nagłych skoków (peak’ów) obciążenia oraz powrotu do normalnego obciążenia.
