@@ -45,10 +45,15 @@ Przeprowadzone zostanie 6 kolejnych testów obciążenia od 10 do 500 (max dla t
 - Test_01 	– 10 wątków 	– czas trwania obciążenia 120 s.
 ![<10threads>](<images/threads/10 threads.png>)
 - Test_02 	– 25 wątków 	– czas trwania obciążenia 120 s.
+![<25threads>](<images/threads/25 threads.png>)
 - Test_03	– 50 wątków 	– czas trwania obciążenia 120 s.
+![<50threads>](<images/threads/50 threads.png>)
 - Test_04 	– 100 wątków 	– czas trwania obciążenia 120 s.
+![<100threads>](<images/threads/100 threads.png>)
 - Test_05 	– 250 wątków 	– czas trwania obciążenia 120 s.
+![<250threads>](<images/threads/250 threads.png>)
 - Test_06 	– 500 wątków 	– czas trwania obciążenia 120 s.
+![<500threads>](<images/threads/500 threads.png>)
 
 ### 2. Peak Test
 Przeprowadzony zostanie jeden test stabilności aplikacji w przypadku nagłych skoków (peak’ów).
@@ -57,3 +62,5 @@ Obciążenie wyjściowe aplikacji wynosi 100 użytkowników, w trakcie testów z
 - 300 wątków 	– czas trwania 20 s.
 - 400 wątków 	– czas trwania 20 s.
 - 500 wątków 	– czas trwania 20 s.
+![<PeakThreads>](<images/threads/peak test threads.png>)
+
