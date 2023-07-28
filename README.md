@@ -68,6 +68,7 @@ Obciążenie wyjściowe aplikacji wynosi 100 użytkowników, w trakcie testów z
 Podczas przygotowywania testów wykorzystano wbudowany Szablon – Recording
 umożliwiający nagranie profili operacyjnych z poziomu przeglądarki internetowej.
 W trakcie tworzenia testów wykorzystano następujące elementy:
+![<testPlan>](<images/TestPlan.png>)
 1. Config Elements – elementy konfiguracyjne:
 - User Defined Variables – służący do określenia zmiennych użytkownika;
 - HTTP Request Defaults – służący do określenia domyślnego adresu testowanej
