@@ -69,10 +69,10 @@ Podczas przygotowywania testów wykorzystano wbudowany Szablon – Recording
 umożliwiający nagranie profili operacyjnych z poziomu przeglądarki internetowej.
 W trakcie tworzenia testów wykorzystano następujące elementy:
 1. Config Elements – elementy konfiguracyjne:
-• User Defined Variables – służący do określenia zmiennych użytkownika;
-• HTTP Request Defaults – służący do określenia domyślnego adresu testowanej
+- User Defined Variables – służący do określenia zmiennych użytkownika;
+- HTTP Request Defaults – służący do określenia domyślnego adresu testowanej
 aplikacji webowej;
-• HTTP Cookie Manager – służący do zarządzania plikami cookie w trakcie
+- HTTP Cookie Manager – służący do zarządzania plikami cookie w trakcie
 przeprowadzania testów;
 • HTTP Header Manager – służący do zarządzania nagłówkami dotyczącymi
 konkretnego zapytania w trakcie wykonywania testów.
