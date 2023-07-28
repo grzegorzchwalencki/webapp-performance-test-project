@@ -74,36 +74,36 @@ W trakcie tworzenia testów wykorzystano następujące elementy:
 aplikacji webowej;
 - HTTP Cookie Manager – służący do zarządzania plikami cookie w trakcie
 przeprowadzania testów;
-• HTTP Header Manager – służący do zarządzania nagłówkami dotyczącymi
+- HTTP Header Manager – służący do zarządzania nagłówkami dotyczącymi
 konkretnego zapytania w trakcie wykonywania testów.
 2. Threads (Users) – elementy kontrolujące liczbę wątków (użytkowników) wykonujących
 dany test:
-• jp@gc – Ultimate Thread Group – element umożliwiający ustawienie szczegółów
+- jp@gc – Ultimate Thread Group – element umożliwiający ustawienie szczegółów
 dotyczących założonego obciążenia w trakcie przeprowadzania testów.
 3. Logic Controller – kontrolery logiczne umożliwiające ustawienie określonych zachowań
 związanych z realizacją planu – wysyłaniem zapytań:
-• Random Controller – kontroler umożliwiający każdorazowo wykonanie losowego
+- Random Controller – kontroler umożliwiający każdorazowo wykonanie losowego
 z znajdującym się wewnątrz niego elementów;
 • Simple Controller – kontroler wykorzystywany do przechowywania modułów
 wchodzących w skład pojedynczego scenariusza operacyjnego.
 4. Sampler – próbka:
-• HTTP Request – element umożliwiający określenie i wysłanie zapytania do
+- HTTP Request – element umożliwiający określenie i wysłanie zapytania do
 konkretnego endpointa;
-• Flow Control Action – element umożliwiający ustawienie parametrów realizacji testu;
-• Think Time – element wykorzystywany do zasymulowania przerw na zastanowienie
+- Flow Control Action – element umożliwiający ustawienie parametrów realizacji testu;
+- Think Time – element wykorzystywany do zasymulowania przerw na zastanowienie
 się użytkownika.
 5. Timer – element wpływający na czas w jakim przeprowadzane są testy:
-• Gaussian Random Timer – element dodający losową przerwę między elementami
+- Gaussian Random Timer – element dodający losową przerwę między elementami
 testu, ustaloną na podstawie podanych parametrów i stworzonej na tej podstwaie
 krzywej Gaussa;
-• Pause – element wykonujący przerwę w realizacji testu o ustalonej długości.
+- Pause – element wykonujący przerwę w realizacji testu o ustalonej długości.
 6. Assertions -elementy umożliwiające ustalenie kryteriów czy dana odpowiedź uzyskana od
 serwera na zapytanie jest zgodna z oczekiwaniami:
-• Response Asseration – element ustalający co powinna zawierać odpowiedź – treść;
-• Duration Asseration – element ustalający w jakim czasie powinna zostać udzielona
+- Response Asseration – element ustalający co powinna zawierać odpowiedź – treść;
+- Duration Asseration – element ustalający w jakim czasie powinna zostać udzielona
 odpowiedź na wysłane zapytanie – czas.
 7. Non-test Elements – elementy nie służące do testowania
-• HTTP(S) Test Script Recorder – umożliwiający zarejestrowanie profili operacyjnych
+- HTTP(S) Test Script Recorder – umożliwiający zarejestrowanie profili operacyjnych
 poprzez „wyklikanie” wszystkiego w przeglądarce internetowej, w znacznym stopniu
 ułatwiający przygotowanie testów.
 
