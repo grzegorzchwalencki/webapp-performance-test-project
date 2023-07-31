@@ -108,7 +108,7 @@ odpowiedź na wysłane zapytanie – czas.
 poprzez „wyklikanie” wszystkiego w przeglądarce internetowej, w znacznym stopniu
 ułatwiający przygotowanie testów.
 
-## V. Wyniki
+## VII. Wyniki
 
 Po przeprowadzonych testach przy użyciu narzędzia Azure Load Testing za pośrednictwem Microsoft Azure wyeksportowano wyniki do plików w formacie CSV. Przy użyciu wbudowanej funkcjonalności JMeter wygenerowano raporty HTML na podstawie, których przeprowadzono analizę wyników.
 ### 1. Load Tests – ResponseTime/Time
@@ -169,7 +169,7 @@ Analiza: Przeprowadzony test skokowych zmian użytkowników w krótkim czasie wy
 - 1 PEAK = 200 wątków – znacząco wydłużył się czas odpowiedzi mieszcząc się w zakresie 20-25 s jednak nie skutkując otrzymania kodu 524;
 - kolejne PEAKI skutkowały występowaniem licznych odpowiedzi w postaci kodu 524 oraz wydłużeniem czasu odpowiedzi powyżej 50 s;
 
-## IX. Wnioski
+## VIII. Wnioski
 Główne wnioski dotyczące wydajności testowanej aplikacji webowej
 
 ### 1. Wąskie gardła wydajności testowanej aplikacji:
