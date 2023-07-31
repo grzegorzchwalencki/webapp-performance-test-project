@@ -131,7 +131,7 @@ Na tym etapie można wskazać, że ten obszar jest wąskim gardłem wydajności 
 
 ------------
 LoadTest_04	- wykres 4;
-![<ResultLoadTest3>](<images/results/4flotResponseTimesOverTime.png>)
+![<ResultLoadTest4>](<images/results/4flotResponseTimesOverTime.png>)
 
 Analiza: Wraz ze wzrostem liczby wątków do 100 – czas odpowiedzi elementów dotyczących wyszukiwania produktów rośnie, osiągając wartości w zakresie od 30 do 50 s. Dodatkowo przy założonym obciążeniu widać znaczące pogorszenie czasu odpowiedzi w innych obszarach:
 - 04_Choose Size – wybór rozmiaru produktu1 na stronie szczegółów produktu1
@@ -146,14 +146,47 @@ Wzrost obciążenia do 100 użytkowników wpłynął na pogorszenie czasu odpowi
 
 ------------
 LoadTest_05	- wykres 5;
-![<ResultLoadTest3>](<images/results/5flotResponseTimesOverTime.png>)
+![<ResultLoadTest5>](<images/results/5flotResponseTimesOverTime.png>)
 
 Analiza: Wraz ze wzrostem liczby wątków do 250 – czas odpowiedzi elementów dotyczących wyszukiwania produktów utrzymuje się w zakresie od 35 do 55 s. Przy tak zdefiniowanym obciążeniu widać jednoznacznie drastyczne pogorszenie się wydajności strony. Znacząca większość testowanych elementów wydłużyło czas odpowiedzi powyżej.
 Pojawiają się przypadki wystąpienia HTTP response status code 524 – Timeout Occured. Jest to nie oficjalny błąd serwera, typowy dla usługi Cloudflare, która jest wykorzystywana do pośredniczenia między użytkownikiem końcowym oraz serwerem. Czas odpowiedzi po, którym występuje wspomniany błąd wynosi 100s.
 
 ------------
 LoadTest_06	- wykres 6;
-![<ResultLoadTest3>](<images/results/6flotResponseTimesOverTime.png>)
+![<ResultLoadTest6>](<images/results/6flotResponseTimesOverTime.png>)
 
 Analiza: Wraz ze wzrostem liczby wątków do 500 – ponad 12 % z zapytań skutkuje błędem HTTP response status code 524.
- 
+
+Na podstawie uzyskanych wyników można stwierdzić, że testowana aplikacja webowa posiada istotne z punktu widzenia wydajności obszary wpływające na pogorszenie uzyskanych wyników – głównie związane z wyszukiwaniem produktów z wykorzystaniem search bara na stronie głównej oraz operacji związanych z aktualizacją koszyka zakupowego.
+
+### 2. Peak test – ResponseTime/Time
+
+------------
+PeakTest_01 – wykres 7;
+![<ResultPEAKTest1>](<images/results/PEAKflotResponseTimesOverTime.png>)
+
+Analiza: Przeprowadzony test skokowych zmian użytkowników w krótkim czasie wykazał, że testowana aplikacja:
+- 1 PEAK = 200 wątków – znacząco wydłużył się czas odpowiedzi mieszcząc się w zakresie 20-25 s jednak nie skutkując otrzymania kodu 524;
+- kolejne PEAKI skutkowały występowaniem licznych odpowiedzi w postaci kodu 524 oraz wydłużeniem czasu odpowiedzi powyżej 50 s;
+
+## IX. Wnioski
+Główne wnioski dotyczące wydajności testowanej aplikacji webowej
+
+### 1. Wąskie gardła wydajności testowanej aplikacji:
+- wyświetlenie wyników wyszukiwania produktów przy pomocy pola wyszukiwania na stronie głównej i operacje związane z zmianą listy produktów wyszukiwania – czas odpowiedzi niezależnie od liczby wątków – znacznie powyżej oczekiwanego poziomu 3 s;
+- aktualizacja i zmiany dotyczące koszyka zakupowego – przy 100 i więcej użytkownikach widoczne spowolnienie czasu reakcji w tym obszarze.
+
+Należy zoptymalizować mechanizm wyszukiwania produktów, w celu skrócenia czasu odpowiedzi do oczekiwanego poziomu, poniżej 3 s.
+
+### 2. Wydajność aplikacji:
+– pojawiające się problemy z wydajnością podczas czynności związanych z aktualizacji koszyka zakupowego przy 100 jednoczesnych użytkownikach korzystających z aplikacji;
+- bardzo duże utrudnienia i długie czasy odpowiedzi w trakcie obsługi 250 jednoczesnych użytkowników przez aplikację – ponad 18% błędów asercji wynikających z czasu odpowiedzi przekraczającego 3s.
+
+Należy zoptymalizować funkcjonalności związane z aktualizacją koszyka zakupowego
+w celu zwieszenia ogólnej wydajności testowanej aplikacji webowej.
+
+### 3. Wydajność aplikacji w trakcie występowania dużych nagłych skoków (peak’ów):
+- skoki do 200 jednoczesnych użytkowników pomimo długich czasów odpowiedzi (20-25s) umożliwiła wykonanie wszystkich założonych operacji;
+- skoki powyżej 300 jednoczesnych użytkowników skutkowały wydłużeniem czasu odpowiedzi oraz występowaniem błędów 524 – uniemożliwiających dokończenie wykonywanych operacji;
+
+W przypadku organizowania akcji promocyjnych istnieje ryzyko osiągnięcia zbyt dużego obciążenia, skutkujące występowaniem błędów odpowiedzi serwera. 
