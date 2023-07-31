@@ -108,3 +108,52 @@ odpowiedź na wysłane zapytanie – czas.
 poprzez „wyklikanie” wszystkiego w przeglądarce internetowej, w znacznym stopniu
 ułatwiający przygotowanie testów.
 
+## V. Wyniki
+
+Po przeprowadzonych testach przy użyciu narzędzia Azure Load Testing za pośrednictwem Microsoft Azure wyeksportowano wyniki do plików w formacie CSV. Przy użyciu wbudowanej funkcjonalności JMeter wygenerowano raporty HTML na podstawie, których przeprowadzono analizę wyników.
+### 1. Load Tests – ResponseTime/Time
+
+------------
+LoadTest_01 – wykres 1;	LoadTest_02 – wykres 2;	LoadTest_03 – wykres 3 
+![<ResultLoadTest1>](<images/results/1flotResponseTimesOverTime.png>)
+![<ResultLoadTest2>](<images/results/2flotResponseTimesOverTime.png>)
+![<ResultLoadTest3>](<images/results/3flotResponseTimesOverTime.png>)
+
+Analiza: Pierwsze testy wskazały jednoznacznie, jaki obszar funkcjonalności w znaczącym stopniu odbiega od reszty pod względem wydajności. 
+Operacje wykonane przez użytkownika na podstawie 1. profilu operacyjnego – wyszukiwanie przedmiotu za pomocą search bara oraz przeglądanie strony wyników przy najniższym obciążeniu nie spełniają założonych kryteriów akceptowalnego czasu odpowiedzi tj. 3000 ms:
+- 01_butytrekkingowe_resultsPage – wyświetlenie strony z wyszukiwanymi wynikami
+- 01_resultPage_limit_75 – zmiana liczby przedmiotów wyświetlanych na stronie wyników
+- 01_resultsPage_2ndpage – zmiana na drugą stronę listy przedmiotów na stronie wyników
+Wraz ze wzrostem liczby wykorzystanych wątków z 25 na 50 – czas odpowiedzi znacząco  rośnie przekraczając założony krytyczny czas odpowiedzi tj. 8000 ms. i osiągając wartości
+w zakresie 15-20 s.
+Na pozostałe elementy poddane testowaniu zwiększanie obciążenia nie wpływa w znaczący sposób na zmianę czasu odpowiedzie. 
+Na tym etapie można wskazać, że ten obszar jest wąskim gardłem wydajności występującym w testowanej aplikacji webowej.
+
+------------
+LoadTest_04	- wykres 4;
+![<ResultLoadTest3>](<images/results/4flotResponseTimesOverTime.png>)
+
+Analiza: Wraz ze wzrostem liczby wątków do 100 – czas odpowiedzi elementów dotyczących wyszukiwania produktów rośnie, osiągając wartości w zakresie od 30 do 50 s. Dodatkowo przy założonym obciążeniu widać znaczące pogorszenie czasu odpowiedzi w innych obszarach:
+- 04_Choose Size – wybór rozmiaru produktu1 na stronie szczegółów produktu1
+- 04_Choose Size2 – wybór rozmiaru produktu2 na stronie szczegółów produktu2
+- 04_CheckoutPage_login – podsumowanie koszyka i przejście do strony logowania
+- 04_Remove Product from Cart  - usunięcie produktu z koszyka
+- 03_AddProduct_to_cart – dodanie produktu do koszyka
+- 04_Update Qty of product – zmiana ilości wybranego produktu w koszyku
+- 02_AddToCart – dodatnie produktu do koszyka
+- 04_Add to Cart  - dodanie produktu do koszyka
+Wzrost obciążenia do 100 użytkowników wpłynął na pogorszenie czasu odpowiedzi podczas wykonywania operacji związanych z koszykiem zakupowym
+
+------------
+LoadTest_05	- wykres 5;
+![<ResultLoadTest3>](<images/results/5flotResponseTimesOverTime.png>)
+
+Analiza: Wraz ze wzrostem liczby wątków do 250 – czas odpowiedzi elementów dotyczących wyszukiwania produktów utrzymuje się w zakresie od 35 do 55 s. Przy tak zdefiniowanym obciążeniu widać jednoznacznie drastyczne pogorszenie się wydajności strony. Znacząca większość testowanych elementów wydłużyło czas odpowiedzi powyżej.
+Pojawiają się przypadki wystąpienia HTTP response status code 524 – Timeout Occured. Jest to nie oficjalny błąd serwera, typowy dla usługi Cloudflare, która jest wykorzystywana do pośredniczenia między użytkownikiem końcowym oraz serwerem. Czas odpowiedzi po, którym występuje wspomniany błąd wynosi 100s.
+
+------------
+LoadTest_06	- wykres 6;
+![<ResultLoadTest3>](<images/results/6flotResponseTimesOverTime.png>)
+
+Analiza: Wraz ze wzrostem liczby wątków do 500 – ponad 12 % z zapytań skutkuje błędem HTTP response status code 524.
+ 
