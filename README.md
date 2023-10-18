@@ -26,14 +26,14 @@ Głównymi założeniami przeprowadzenia testów wydajnościowych wybranej aplik
 - [x] Microsoft Azure - Azure Load Testing
 
 ## IV. Profile operacyjne
-1. Użytkownik wchodzi na stronę główną, w polu wyszukiwania wpisuje „byty trekkingowe” – zatwierdza wyszukiwanie, przechodzi na stronę z wynikami wyszukiwania, przechodzi na drugą stronę listy wyszukanych przedmiotów, zmienia limit wyświetlanych przedmiotów na jednej stronie na 75.
+1. Użytkownik wchodzi na stronę główną, w polu wyszukiwania wpisuje „buty trekkingowe” – zatwierdza wyszukiwanie, przechodzi na stronę z wynikami wyszukiwania, przechodzi na drugą stronę listy wyszukanych przedmiotów, zmienia limit wyświetlanych przedmiotów na jednej stronie na 75.
 
 2. Użytkownik wchodzi na stronę główną, klika w zakładkę przekierowującą na stronę z przedmiotami z Wyprzedaży, wybiera produkt i przechodzi do strony ze szczegółami o nim, zmienia kolor, dodaje produkt do koszyka.
 
 3. Użytkownik wchodzi na stronę główną,  rozwija na dole strony listę – Nowości, z rozwijanej listy wybiera kategorię przedmiotów – lampka czołowa, sortuje listę przedmiotów rosnąco cenami, bezpośrednio z otrzymanej listy dodaje wybrany przedmiot do koszyka, sprawdza stan koszyka.
 
-4. Użytkownik wchodzi na stronę główną, wybiera 1. kategorię, wybiera 1. przedmiot przechodząc do strony ze szczegółami, wybiera rozmiar i dodaje go do koszyka. Wybiera 2. kategorię, wybiera
-2. przedmiot, przechodzi do strony ze szczegółami, wybiera rozmiar 2. przedmiotu i dodaje go do koszyka. Sprawdza stan koszyka, aktualizuje ilość 1. produktu na 2, usuwa 2. produkt z koszyka i przechodzi do podsumowania zakupów i logowania.
+4. Użytkownik wchodzi na stronę główną, wybiera pierwszą kategorię, wybiera pierwszy przedmiot przechodząc do strony ze szczegółami, wybiera rozmiar i dodaje go do koszyka. Wybiera drugą kategorię, wybiera
+drugi przedmiot, przechodzi do strony ze szczegółami, wybiera rozmiar drugiego przedmiotu i dodaje go do koszyka. Sprawdza stan koszyka, aktualizuje ilość pierwszego produktu na 2, usuwa drugi produkt z koszyka i przechodzi do podsumowania zakupów i logowania.
 
 5. Użytkownik wchodzi na stronę główną, wybiera kategorię produktów, przechodzi na drugą stronę wyników, zmienia limit listy wyświetlanych przedmiotów na 75.
 
